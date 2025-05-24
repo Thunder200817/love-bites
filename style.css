@@ -86,7 +86,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px; /* Adjust this value for desired vertical spacing */
+    gap: 18px;
     width: 30px;
     margin: 0 auto;
     text-align: center;
@@ -102,7 +102,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 32px;   /* Ensures all icons have the same vertical space */
+    height: 32px;
     width: 32px;
     font-size: 1.5rem;
 }
@@ -797,8 +797,8 @@ const url = 'https://yourusername.github.io/your-repo/'; // Replace with your ac
 
 QRCode.toFile('website-qr.png', url, {
   color: {
-    dark: '#000',  // QR code color
-    light: '#FFF'  // Background color
+    dark: '#000',  
+    light: '#FFF' 
   }
 }, function (err) {
   if (err) throw err;
