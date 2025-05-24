@@ -56,6 +56,15 @@
                             <input type="text" name="first name" placeholder="First Name" required>
                             <input type="text" name="last name" placeholder="Last Name" required>
                         </div>
+                        <input 
+                            type="tel" 
+                            name="phone" 
+                            placeholder="Phone Number" 
+                            pattern="[0-9+\-\s()]{7,}" 
+                            required 
+                            style="width:100%;margin-bottom:10px;"
+                            autocomplete="tel"
+                        >
                         <textarea name="message" placeholder="Your message" required></textarea>
                         <button type="submit">Send</button>
                     </form>

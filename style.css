@@ -754,6 +754,32 @@ button:hover {
     }
 }
 
+/* Add to your style.css for responsive phone input styling */
+.contact-form input[type="tel"] {
+    font-family: 'montserrat', Arial, sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #d43b31;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .contact-form input[type="tel"] {
+        font-size: 0.98rem;
+        padding: 8px;
+    }
+}
+@media (max-width: 600px) {
+    .contact-form input[type="tel"] {
+        font-size: 0.92rem;
+        padding: 6px;
+    }
+}
+
 /* QR Title */
 .qr-title {
     text-align: center;
