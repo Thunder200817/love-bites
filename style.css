@@ -789,18 +789,3 @@ button:hover {
     background: #fbb94b;
     opacity: 1;
 }
-
-/* QR Code Generation Script */
-const QRCode = require('qrcode');
-
-const url = 'https://yourusername.github.io/your-repo/'; // Replace with your actual URL
-
-QRCode.toFile('website-qr.png', url, {
-  color: {
-    dark: '#000',  
-    light: '#FFF' 
-  }
-}, function (err) {
-  if (err) throw err;
-  console.log('QR code saved as website-qr.png');
-});
