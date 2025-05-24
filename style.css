@@ -83,11 +83,30 @@ body {
 }
 .side-bar .social-links,
 .side-bar .contact-shortcut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px; /* Adjust this value for desired vertical spacing */
     width: 30px;
-    margin: 2px auto;
+    margin: 0 auto;
     text-align: center;
-    cursor: pointer;
 }
+.side-bar .social-links > a,
+.side-bar .contact-shortcut > a,
+.social-links > a,
+.contact-shortcut > a {
+    text-decoration: none;
+}
+.side-bar .social-links > a,
+.side-bar .contact-shortcut > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;   /* Ensures all icons have the same vertical space */
+    width: 32px;
+    font-size: 1.5rem;
+}
+
 .insta, .face, .phone, .whats, .email { color: #d43b31; }
 .insta:hover { color: #a50498; }
 .face:hover { color: #0230fd; }
@@ -770,3 +789,18 @@ button:hover {
     background: #fbb94b;
     opacity: 1;
 }
+
+/* QR Code Generation Script */
+const QRCode = require('qrcode');
+
+const url = 'https://yourusername.github.io/your-repo/'; // Replace with your actual URL
+
+QRCode.toFile('website-qr.png', url, {
+  color: {
+    dark: '#000',  // QR code color
+    light: '#FFF'  // Background color
+  }
+}, function (err) {
+  if (err) throw err;
+  console.log('QR code saved as website-qr.png');
+});
