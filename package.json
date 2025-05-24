@@ -1,5 +1,8 @@
 {
   "scripts": {
     "deploy": "git add . && git commit -m \"Deploy\" && git push"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
   }
 }
