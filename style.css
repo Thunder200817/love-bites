@@ -1,4 +1,4 @@
-/* Fonts */
+/* ===================== FONTS ===================== */
 @font-face {
     font-family: 'Roboto';
     font-weight: 400;
@@ -11,7 +11,7 @@
     src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
 }
 
-/* Base Styles */
+/* ===================== BASE STYLES ===================== */
 html { color-scheme: rgb(0, 0, 0); }
 body {
     font-family: 'Roboto', Arial, sans-serif;
@@ -23,7 +23,7 @@ body {
     background: #fff;
 }
 
-/* Header & Navbar */
+/* ===================== HEADER & NAVBAR ===================== */
 #header {
     display: flex;
     align-items: center;
@@ -71,7 +71,7 @@ body {
     left: 20px;
 }
 
-/* Sidebar */
+/* ===================== SIDEBAR ===================== */
 .side-bar {
     width: 3%;
     height: fit-content;
@@ -114,7 +114,7 @@ body {
 .whats:hover { color: rgb(1, 216, 1); }
 .email:hover { color: black; }
 
-/* Hero and Containers */
+/* ===================== HERO & CONTAINERS ===================== */
 .hero-back {
     position: fixed !important;
     top: 0;
@@ -159,7 +159,7 @@ body {
     background-attachment: fixed;
     background-color: rgba(247, 247, 116, 0.911);
     border-radius: 20px;
-    color: rgb(247, 67, 67);
+    color: #000;
     box-sizing: border-box;
     overflow-wrap: break-word;
 }
@@ -170,9 +170,10 @@ body {
     width: 100%;
     text-align: center;
     margin: 30px auto 0 auto;
+    color: #000;
 }
 
-/* Contact & Social Links */
+/* ===================== CONTACT & SOCIAL LINKS ===================== */
 .contact-links,
 .social-links {
     display: flex;
@@ -192,14 +193,14 @@ body {
     font-size: 1.5rem;
     white-space: nowrap;
     font-family: 'montserrat';
-    color: rgb(247, 67, 67);
+    color: #000;
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* About & Product Images */
+/* ===================== ABOUT & PRODUCT IMAGES ===================== */
 .about,
 .container-about .about,
 .container img,
@@ -215,13 +216,11 @@ body {
     border-radius: 12px;
 }
 
-/* Responsive: Tablet */
+/* ===================== RESPONSIVE: TABLET ===================== */
 @media (max-width: 900px) {
     body { font-size: 1rem; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.4rem; }
-    h4 { font-size: 1.1rem; }
-    p { font-size: 0.98rem; }
+    h2, h3, h4 { color: #000; }
+    p { color: #000; }
     #header {
         padding: 10px 30px;
         height: auto;
@@ -265,6 +264,7 @@ body {
         border-radius: 10px;
         align-items: center;
         box-sizing: border-box;
+        color: #000;
     }
     .about,
     .container-about .about,
@@ -324,13 +324,15 @@ body {
         text-align: center;
         white-space: normal;
         word-break: break-word;
+        color: #000;
     }
     .container-contact h2, .container-contact h4,
     .container-about h2, .container-about h4 {
         font-size: 2rem;
         margin-top: 20px;
+        color: #000;
     }
-    h3 { font-size: 2rem; }
+    h3 { font-size: 2rem; color: #000; }
     .contact-form-flex {
         flex-direction: column !important;
         align-items: center;
@@ -345,6 +347,7 @@ body {
         min-width: 0;
         padding: 16px 8px;
         box-sizing: border-box;
+        color: #000;
     }
     .contact-form-img {
         max-width: 100%;
@@ -360,13 +363,11 @@ body {
     }
 }
 
-/* Responsive: Mobile */
+/* ===================== RESPONSIVE: MOBILE ===================== */
 @media (max-width: 600px) {
     body { font-size: 0.95rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.1rem; }
-    h4 { font-size: 1rem; }
-    p { font-size: 0.92rem; }
+    h2, h3, h4 { color: #000; }
+    p { color: #000; }
     #header {
         flex-direction: row;
         justify-content: space-between;
@@ -402,6 +403,7 @@ body {
         border-radius: 10px;
         align-items: center;
         box-sizing: border-box;
+        color: #000;
     }
     .about,
     .container-about .about,
@@ -461,15 +463,17 @@ body {
         text-align: center;
         white-space: normal;
         word-break: break-word;
+        color: #000;
     }
     .container-contact h2, .container-contact h4,
     .container-about h2, .container-about h4 {
         font-size: 1.5rem;
         margin-top: 15px;
+        color: #000;
     }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.1rem; }
-    p { font-size: 0.92rem; }
+    h2 { font-size: 1.5rem; color: #000; }
+    h3 { font-size: 1.1rem; color: #000; }
+    p { font-size: 0.92rem; color: #000; }
     .contact-form-flex {
         flex-direction: column !important;
         align-items: center;
@@ -484,6 +488,7 @@ body {
         min-width: 0;
         padding: 10px 2px;
         box-sizing: border-box;
+        color: #000;
     }
     .contact-form-img {
         max-width: 100%;
@@ -499,59 +504,66 @@ body {
     }
 }
 
-/* Main header on index.html only */
+/* ===================== MAIN HEADER ON INDEX.HTML ===================== */
 body.index .container h2 {
     font-size: 2.5rem;
+    color: #000;
 }
 @media (max-width: 900px) {
     body.index .container h2 {
         font-size: 2rem;
+        color: #000;
     }
 }
 @media (max-width: 600px) {
     body.index .container h2 {
         font-size: 1.6rem;
+        color: #000;
     }
 }
 
-/* Main header on products.html only */
+/* ===================== MAIN HEADER ON PRODUCTS.HTML ===================== */
 body.products .container h2 {
     font-size: 3rem;
+    color: #000;
 }
 @media (max-width: 900px) {
     body.products .container h2 {
         font-size: 2.5rem;
+        color: #000;
     }
 }
 @media (max-width: 600px) {
     body.products .container h2 {
         font-size: 2.1rem;
+        color: #000;
     }
 }
 
-/* Indent the first line of every paragraph */
+/* ===================== PARAGRAPH STYLES ===================== */
 p {
     text-indent: 2em;
     font-family: 'montserrat';
     font-size: 1.1rem;
+    color: #000;
 }
 @media (min-width: 901px) {
-    p { font-size: 1.3rem; }
+    p { font-size: 1.3rem; color: #000; }
 }
 
-/* Spacing between headers and paragraphs */
-h2, h3, h4 { margin-bottom: 2em; }
+/* ===================== HEADER SPACING ===================== */
+h2, h3, h4 { margin-bottom: 2em; color: #000; }
 @media (max-width: 900px) {
-    h2, h3, h4 { margin-bottom: 1.7em; }
+    h2, h3, h4 { margin-bottom: 1.7em; color: #000; }
 }
 @media (max-width: 600px) {
-    h2, h3, h4 { margin-bottom: 1.4em; }
+    h2, h3, h4 { margin-bottom: 1.4em; color: #000; }
 }
 
-/* Typography */
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.8rem; }
-h4 { font-size: 1.3rem; }
+/* ===================== TYPOGRAPHY ===================== */
+h2 { font-size: 2.5rem; color: #000; }
+h3 { font-size: 1.8rem; color: #000; }
+h4 { font-size: 1.3rem; color: #000; }
 button {
     color: #d43b31;
     border: 2px solid #d43b31;
@@ -568,7 +580,7 @@ button:hover {
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-/* Contact & Social Links: Color Configurations */
+/* ===================== CONTACT & SOCIAL LINKS COLORS ===================== */
 .contact-links .con-phone,
 .contact-links .con-wa,
 .contact-links .con-mail,
@@ -588,7 +600,7 @@ button:hover {
 .social-links .face { color: #d43b31; }
 .social-links .face:hover { color: #0230fd; }
 
-/* Contact Form */
+/* ===================== CONTACT FORM ===================== */
 .contact-form-flex {
     display: flex;
     flex-direction: row;
@@ -636,13 +648,15 @@ button:hover {
     box-sizing: border-box;
     resize: none;
     text-align: center;
+    color: #000;
 }
 .contact-form textarea {
     min-height: 120px;
     text-align: left;
     resize: vertical;
+    color: #000;
 }
-.contact-form textarea::placeholder { text-align: left; }
+.contact-form textarea::placeholder { text-align: left; color: #000; }
 .contact-form button {
     background: transparent;
     color: #d43b31;
@@ -754,7 +768,6 @@ button:hover {
     }
 }
 
-/* Add to your style.css for responsive phone input styling */
 .contact-form input[type="tel"] {
     font-family: 'montserrat', Arial, sans-serif;
     font-size: 1rem;
@@ -765,22 +778,24 @@ button:hover {
     box-sizing: border-box;
     margin-bottom: 10px;
     text-align: center;
+    color: #000;
 }
-
 @media (max-width: 900px) {
     .contact-form input[type="tel"] {
         font-size: 0.98rem;
         padding: 8px;
+        color: #000;
     }
 }
 @media (max-width: 600px) {
     .contact-form input[type="tel"] {
         font-size: 0.92rem;
         padding: 6px;
+        color: #000;
     }
 }
 
-/* QR Title */
+/* ===================== QR TITLE ===================== */
 .qr-title {
     text-align: center;
     font-size: 1rem;
@@ -789,7 +804,7 @@ button:hover {
     font-family: 'montserrat', Arial, sans-serif;
 }
 
-/* Back to Top Button */
+/* ===================== BACK TO TOP BUTTON ===================== */
 #backToTop {
     position: fixed;
     bottom: 32px;
