@@ -129,6 +129,5 @@ button:hover{background:#d43b31;color:#fff;border-color:#d43b31;transition:backg
 @media (max-width:600px){.social-links{flex-direction:row!important;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;}.social-links p{width:auto;min-width:120px;text-align:center;white-space:normal;}}
 @media (max-width:900px){.contact-links,.social-links{flex-direction:column!important;gap:10px;align-items:center;width:100%;max-width:100%;}.contact-links p,.social-links p{font-size:1.2rem;text-align:center;white-space:normal;word-break:break-word;color:#000;}}
 @media (max-width:600px){.contact-links,.social-links{flex-direction:column!important;gap:8px;align-items:center;width:100%;max-width:100%;}.contact-links p,.social-links p{font-size:1rem;text-align:center;white-space:normal;word-break:break-word;color:#000;}}
-
-/* Force all headers and paragraphs to use dark red */
 h1,h2,h3,h4,h5,h6,p { color: #600000 !important; }
+@media (max-width:900px){.side-bar{position:fixed;top:calc(170px);right:0;left:auto;width:auto;height:auto;border-radius:12px;background:linear-gradient(#fbd94b,#f7f774e8);z-index:100}}
