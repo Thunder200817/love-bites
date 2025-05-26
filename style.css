@@ -27,6 +27,8 @@ body{font-family:Roboto,Arial,sans-serif;font-size:1.5rem;line-height:1.5;font-w
 .contact-links,.social-links{display:flex;flex-direction:row;gap:30px;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;max-width:100%;box-sizing:border-box;margin:20px 0 0}
 .contact-links p,.social-links p{margin:0;font-size:1.5rem;white-space:nowrap;font-family:montserrat;color:#000;max-width:100%;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis}
 .about,.container-about .about,.container img,.container-2 img,.container-about img,.container-contact img{width:100%;max-width:900px;height:auto;display:block;margin:30px auto;box-sizing:border-box;border-radius:12px}
+.churros>.churros-imgs{display:flex;flex-direction:row;gap:24px;justify-content:center;align-items:flex-start;margin:24px 0}
+.churros>.churros-imgs img{max-width:48%;height:auto;border-radius:12px;box-sizing:border-box;display:block}
 @media (max-width:900px){
 body{font-size:1rem}
 h2,h3,h4,p{color:#000}
