@@ -13,6 +13,29 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/d9aa636aba.js" crossorigin="anonymous"></script>
     <style>
+        .map-section {
+            margin: 16px 0 28px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .maps-link {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 30px;
+            background: transparent;
+            color: #d43b31;
+            border: 2px solid #d43b31;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .maps-link:hover {
+            background: #d43b31;
+            color: #fff;
+            transition: background .2s, color .2s;
+        }
         @media (max-width:900px) {
             .hero-back {
                 position: absolute;
@@ -55,6 +78,11 @@
                 <div class="social-links">
                     <p class="insta">Instagram: <a class="insta" href="https://www.instagram.com/love_bites_0fficial?igsh=MXhrdGNndzhmM2ZoYQ%3D%3D&utm_source=qr" target="_blank">@LoveBites</a></p>
                    <!--<p class="face">Facebook: <a class="face" href="#" target="_blank">@LoveBites</a></p>-->
+                </div>
+                <h2>Find Us</h2>
+                <div class="map-section">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.8500941982966!2d-84.52233972541316!3d38.00395689892724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88425b389c8cbd05%3A0xb7cea4d2a660899e!2sLove%20at%20First%20Bite!5e0!3m2!1sen!2sus!4v1779581887626!5m2!1sen!2sus" width="100%" height="350" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Love Bites location on Google Maps"></iframe>
+                    <a class="maps-link" href="https://maps.app.goo.gl/1ZSHdLsfSXSMCyLk7" target="_blank" rel="noopener noreferrer">Get Directions on Google Maps</a>
                 </div>
                 <div class="contact-form-flex">
                     <form class="contact-form" action="https://formspree.io/f/xbloeebd" method="POST">
