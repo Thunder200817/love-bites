@@ -360,7 +360,17 @@ button:hover {
 .contact-links .con-wa,
 .contact-links .con-mail,
 .social-links .insta,
-.social-links .face {
+.social-links .face,
+.contact-links .con-phone:link,
+.contact-links .con-phone:visited,
+.contact-links .con-wa:link,
+.contact-links .con-wa:visited,
+.contact-links .con-mail:link,
+.contact-links .con-mail:visited,
+.social-links .insta:link,
+.social-links .insta:visited,
+.social-links .face:link,
+.social-links .face:visited {
     text-decoration: none;
     transition: color .2s;
 }
@@ -535,7 +545,9 @@ button:hover {
     gap: 10px;
 }
 
-.maps-link {
+.maps-link,
+.maps-link:link,
+.maps-link:visited {
     display: inline-block;
     text-align: center;
     padding: 10px 30px;
@@ -562,6 +574,13 @@ button:hover {
     gap: 12px;
 }
 
+.review-qr-link,
+.review-qr-link:link,
+.review-qr-link:visited {
+    text-decoration: none;
+    display: inline-block;
+}
+
 .review-qr {
     width: 180px;
     height: 180px;
@@ -574,7 +593,9 @@ button:hover {
     margin: 16px 0 24px 0;
 }
 
-.doordash-btn {
+.doordash-btn,
+.doordash-btn:link,
+.doordash-btn:visited {
     display: inline-block;
     padding: 10px 30px;
     background: #ff3008;
