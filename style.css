@@ -526,6 +526,72 @@ button:hover {
     font-family: montserrat, Arial, sans-serif;
 }
 
+/* ─── MAP & REVIEW & DOORDASH (CONTACT PAGE) ─────────────────── */
+
+.map-section {
+    margin: 16px 0 28px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.maps-link {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 30px;
+    background: transparent;
+    color: #d43b31;
+    border: 2px solid #d43b31;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.maps-link:hover {
+    background: #d43b31;
+    color: #fff;
+    transition: background .2s, color .2s;
+}
+
+.review-section {
+    margin: 16px 0 28px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.review-qr {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: contain;
+    border: 2px solid #d43b31;
+}
+
+.doordash-section {
+    margin: 16px 0 24px 0;
+}
+
+.doordash-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #ff3008;
+    color: #fff;
+    border: 2px solid #ff3008;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.doordash-btn:hover {
+    background: transparent;
+    color: #ff3008;
+}
+
 /* ─── BACK TO TOP ─────────────────────────────────────────────── */
 
 #backToTop {
