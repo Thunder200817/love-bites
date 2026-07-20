@@ -34,14 +34,35 @@
                 <h2>Contact Us</h2>
                 <p>We are here to help you with any questions or requests you may have. Please feel free to reach out to us through the following channels:</p>
                 <p>You can place orders directly on DoorDash or by contacting us through the channels below.</p>
-                <div class="doordash-section">
-                    <a class="doordash-btn" href="https://www.doordash.com/store/love-bites-llc-lexington-45542702/109950722/" target="_blank" rel="noopener noreferrer">
-                        Order on DoorDash
-                    </a>
+                <h2 id="location-schedule-section">Location Schedule</h2>
+                <div class="location-schedule-section">
+                    <p>Use the calendar below to check upcoming pop-up dates and special events.</p>
+                    <div class="calendar-card">
+                        <div class="calendar-controls">
+                            <button type="button" class="calendar-nav" id="calendar-prev" aria-label="Previous month">&#8249;</button>
+                            <h3 id="calendar-month-label">Month Year</h3>
+                            <button type="button" class="calendar-nav" id="calendar-next" aria-label="Next month">&#8250;</button>
+                        </div>
+                        <div class="calendar-weekdays">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>
+                        <div id="calendar-grid" class="calendar-grid"></div>
+                        <div class="calendar-events">
+                            <h4 id="selected-date-label">Select a date</h4>
+                            <div class="calendar-details-box">
+                                <p class="calendar-details-caption">Selected event</p>
+                                <div id="selected-event-details" class="selected-event-details"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-links">
-                    <p>Phone: <a class="con-phone" href="tel:+18593382502">+1 (859) 338-2502</a></p>
-                    <p>WhatsApp: <a class="con-wa" href="https://wa.me/18593382502" target="_blank">+1 (859) 338-2502</a></p>
                     <p>Email: <a class="con-mail" href="mailto:sales.lovebites@gmail.com">sales.lovebites@gmail.com</a></p>
                 </div>
                 <h2>Visit our social media</h2>
@@ -93,6 +114,185 @@
                 behavior: 'smooth'
             });
         };
+
+        const today = new Date();
+        let currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
+        let selectedDate = new Date(today);
+
+        function formatDateKey(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        function isSameDate(first, second) {
+            return first.getFullYear() === second.getFullYear()
+                && first.getMonth() === second.getMonth()
+                && first.getDate() === second.getDate();
+        }
+
+        const defaultSchedule = {
+            title: 'Storefront open',
+            description: 'Regular storefront hours apply for this day.',
+            location: 'Regular Location',
+            time: 'Open Thursday through Saturday from 4:00 PM - 11:00 PM'
+        };
+
+        const scheduleByDate = {
+            [formatDateKey(new Date(2026, 6, 30))]: {
+                title: 'The store is closed today',
+                description: 'The store is closed today.',
+                location: 'Regular Location',
+                time: 'Closed'
+            }
+        };
+
+        const eventsByDate = {
+            [formatDateKey(new Date(2026, 6, 31))]: [{
+                title: 'Crave Food + Music Festival',
+                description: 'The Crave Food + Music Festival is a family and dog-friendly weekend event in downtown Lexington, KY, that celebrates local Kentucky culture through food, craft drinks, and live entertainment. The event sells passes at $15 on pre-sale and at $20 at the gate. Visit <a href="https://www.cravelexington.com/" target="_blank" rel="noopener noreferrer">https://www.cravelexington.com/</a> for anticipated tickets.',
+                location: '116 Cherokee Park, Lexington, KY 40503-1304',
+                time: '4:30 PM - 10:00 PM',
+                ticketUrl: 'https://www.cravelexington.com/'
+            }],
+            [formatDateKey(new Date(2026, 7, 1))]: [{
+                title: 'Crave Food + Music Festival',
+                description: 'The Crave Food + Music Festival is a family and dog-friendly weekend event in downtown Lexington, KY, that celebrates local Kentucky culture through food, craft drinks, and live entertainment. The event sells passes at $15 on pre-sale and at $20 at the gate. Visit <a href="https://www.cravelexington.com/" target="_blank" rel="noopener noreferrer">https://www.cravelexington.com/</a> for anticipated tickets.',
+                location: '116 Cherokee Park, Lexington, KY 40503-1304',
+                time: '4:30 PM - 10:00 PM',
+                ticketUrl: 'https://www.cravelexington.com/'
+            }]
+        };
+
+        function isRegularOperatingDay(date) {
+            const day = date.getDay();
+            return day === 4 || day === 5 || day === 6;
+        }
+
+        function getDisplayItemForDate(date) {
+            const key = formatDateKey(date);
+            const event = eventsByDate[key]?.[0];
+
+            if (event) {
+                return { ...event, isEvent: true };
+            }
+
+            const customSchedule = scheduleByDate[key];
+            if (customSchedule) {
+                return { ...customSchedule, isEvent: false, isClosed: true };
+            }
+
+            if (isRegularOperatingDay(date)) {
+                return { ...defaultSchedule, isEvent: false, isClosed: false };
+            }
+
+            return { isEvent: false, isClosed: false };
+        }
+
+        function renderEventsPanel() {
+            const label = document.getElementById('selected-date-label');
+            const details = document.getElementById('selected-event-details');
+            const displayItem = getDisplayItemForDate(selectedDate);
+
+            label.textContent = new Intl.DateTimeFormat('en', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            }).format(selectedDate);
+
+            details.innerHTML = '';
+
+            if (!displayItem.isEvent) {
+                if (displayItem.isClosed) {
+                    details.innerHTML = '<p>The store is closed today.</p>';
+                    return;
+                }
+
+                details.innerHTML = '<p>No events planned for this date.</p>';
+                return;
+            }
+
+            const locationText = displayItem.location || 'Location details coming soon.';
+            const encodedLocation = encodeURIComponent(locationText);
+            const navigationHref = `geo:0,0?q=${encodedLocation}`;
+            const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
+
+            details.innerHTML = `
+                <p class="event-title">${displayItem.title}</p>
+                <p class="event-description">${displayItem.description}</p>
+                <p class="event-time">Time: ${displayItem.time || 'Time to be announced'}</p>
+                <p class="event-location">Location: <a href="${navigationHref}" target="_blank" rel="noopener noreferrer" onclick="window.location.href='${navigationHref}'; setTimeout(() => window.open('${mapsHref}', '_blank', 'noopener,noreferrer'), 500); return false;">${locationText}</a></p>
+                ${displayItem.ticketUrl ? `<p class="event-ticket-link"><a href="${displayItem.ticketUrl}" target="_blank" rel="noopener noreferrer">Visit event website</a></p>` : ''}
+                <p class="event-date">Date: ${new Intl.DateTimeFormat('en', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                }).format(selectedDate)}</p>
+            `;
+        }
+
+        function renderCalendar() {
+            const monthLabel = document.getElementById('calendar-month-label');
+            const grid = document.getElementById('calendar-grid');
+            monthLabel.textContent = new Intl.DateTimeFormat('en', {
+                month: 'long',
+                year: 'numeric'
+            }).format(currentDate);
+
+            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+            const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+            const prevMonthDays = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+            const totalCells = 42;
+            const cells = [];
+
+            for (let i = 0; i < totalCells; i += 1) {
+                let dayNumber;
+                let date;
+                let isCurrentMonth = true;
+
+                if (i < firstDay) {
+                    dayNumber = prevMonthDays - firstDay + i + 1;
+                    date = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, dayNumber);
+                    isCurrentMonth = false;
+                } else if (i >= firstDay + daysInMonth) {
+                    dayNumber = i - firstDay - daysInMonth + 1;
+                    date = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, dayNumber);
+                    isCurrentMonth = false;
+                } else {
+                    dayNumber = i - firstDay + 1;
+                    date = new Date(currentDate.getFullYear(), currentDate.getMonth(), dayNumber);
+                }
+
+                const displayItem = getDisplayItemForDate(date);
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'day-cell' + (isCurrentMonth ? '' : ' muted') + (isSameDate(date, today) ? ' today' : '') + (isSameDate(date, selectedDate) ? ' selected' : '') + (displayItem.isEvent ? ' has-events' : '');
+                button.innerHTML = `<span class="day-number">${dayNumber}</span>${displayItem.isEvent ? `<span class="day-event-label">${displayItem.title}</span>` : ''}${displayItem.isClosed ? `<span class="day-event-label">Closed</span>` : ''}${isRegularOperatingDay(date) && !displayItem.isEvent && !displayItem.isClosed ? `<span class="day-event-label">Open</span>` : ''}`;
+                button.addEventListener('click', () => {
+                    selectedDate = date;
+                    renderCalendar();
+                });
+                cells.push(button);
+            }
+
+            grid.innerHTML = '';
+            cells.forEach(cell => grid.appendChild(cell));
+            renderEventsPanel();
+        }
+
+        document.getElementById('calendar-prev').addEventListener('click', () => {
+            currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1);
+            renderCalendar();
+        });
+
+        document.getElementById('calendar-next').addEventListener('click', () => {
+            currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+            renderCalendar();
+        });
+
+        renderCalendar();
     </script>
 </body>
 </html>
