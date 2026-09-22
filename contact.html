@@ -126,21 +126,18 @@
             return `${year}-${month}-${day}`;
         }
 
+        function eventDate(year, month, day) {
+            return formatDateKey(new Date(year, month - 1, day));
+        }
+
         function isSameDate(first, second) {
             return first.getFullYear() === second.getFullYear()
                 && first.getMonth() === second.getMonth()
                 && first.getDate() === second.getDate();
         }
 
-        const defaultSchedule = {
-            title: 'Storefront open',
-            description: 'Regular storefront hours apply for this day.',
-            location: 'Regular Location',
-            time: 'Open Thursday through Saturday from 4:00 PM - 11:00 PM'
-        };
-
         const scheduleByDate = {
-            [formatDateKey(new Date(2026, 6, 30))]: {
+            [eventDate(2026, 7, 30)]: {
                 title: 'The store is closed today',
                 description: 'The store is closed today.',
                 location: 'Regular Location',
@@ -149,26 +146,100 @@
         };
 
         const eventsByDate = {
-            [formatDateKey(new Date(2026, 6, 31))]: [{
+            [eventDate(2026, 7, 31)]: [{
                 title: 'Crave Food + Music Festival',
                 description: 'The Crave Food + Music Festival is a family and dog-friendly weekend event in downtown Lexington, KY, that celebrates local Kentucky culture through food, craft drinks, and live entertainment. The event sells passes at $15 on pre-sale and at $20 at the gate. Visit <a href="https://www.cravelexington.com/" target="_blank" rel="noopener noreferrer">https://www.cravelexington.com/</a> for anticipated tickets.',
                 location: '116 Cherokee Park, Lexington, KY 40503-1304',
                 time: '4:30 PM - 10:00 PM',
                 ticketUrl: 'https://www.cravelexington.com/'
             }],
-            [formatDateKey(new Date(2026, 7, 1))]: [{
+            [eventDate(2026, 8, 1)]: [{
                 title: 'Crave Food + Music Festival',
                 description: 'The Crave Food + Music Festival is a family and dog-friendly weekend event in downtown Lexington, KY, that celebrates local Kentucky culture through food, craft drinks, and live entertainment. The event sells passes at $15 on pre-sale and at $20 at the gate. Visit <a href="https://www.cravelexington.com/" target="_blank" rel="noopener noreferrer">https://www.cravelexington.com/</a> for anticipated tickets.',
                 location: '116 Cherokee Park, Lexington, KY 40503-1304',
                 time: '4:30 PM - 10:00 PM',
                 ticketUrl: 'https://www.cravelexington.com/'
+            }],
+            [eventDate(2026, 9, 24)]: [{
+                title: 'Fall with Love Bites',
+                description: 'Come with us to celebrate Fall with our special commemoration menu made with all the Love❤️ .',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+            [eventDate(2026, 9, 25)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 2:00 PM'
+            }, {
+                title: 'Trifecta Glass Blower and Cocktail Lounge',
+                description: 'Come to Trifecta enjoy the perfect mix of art, drinks and the Love Bites Experience at this amazing Spot.',
+                location: '243 Walton Ave, Lexington, KY 40502',
+                time: '6:00 PM - 10:00 PM',
+                ticketUrl: 'https://www.trifectadesignstudio.com/'
+            }],
+             [eventDate(2026, 9, 26)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+            [eventDate(2026, 10, 3)]: [{
+                title: 'Bluegrass Food Truck Showdown',
+                description: 'A fun and delicious food truck combat featuring Bluegrass food trucks, placed at River Front Park, come vote for us 🤩.',
+                location: '146 River Rd, Brandenburg, KY 40108, USA',
+                time: '10:00 AM - 10:00 PM',
+                ticketUrl: 'https://www.electstacycrosslin.net/events/bluegrass-food-truck-showdown'
+            }],
+                [eventDate(2026, 10, 8)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 9)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 10)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 17)]: [{
+                title: 'Event coming soon',
+                description: 'coming soon.',
+                location: 'coming soon.',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 22)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 23)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 24)]: [{
+                title: 'Kroger',
+                description: 'Kroger at Euclid Ave.',
+                location: '704 Euclid Ave, Lexington, KY 40502',
+                time: '10:00 AM - 10:00 PM'
+            }],
+                [eventDate(2026, 10, 25)]: [{
+                title: 'Event coming soon',
+                description: 'coming soon.',
+                location: 'coming soon.',
+                time: '10:00 AM - 10:00 PM'
             }]
         };
-
-        function isRegularOperatingDay(date) {
-            const day = date.getDay();
-            return day === 4 || day === 5 || day === 6;
-        }
 
         function getDisplayItemForDate(date) {
             const key = formatDateKey(date);
@@ -183,16 +254,13 @@
                 return { ...customSchedule, isEvent: false, isClosed: true };
             }
 
-            if (isRegularOperatingDay(date)) {
-                return { ...defaultSchedule, isEvent: false, isClosed: false };
-            }
-
             return { isEvent: false, isClosed: false };
         }
 
         function renderEventsPanel() {
             const label = document.getElementById('selected-date-label');
             const details = document.getElementById('selected-event-details');
+            const events = eventsByDate[formatDateKey(selectedDate)] || [];
             const displayItem = getDisplayItemForDate(selectedDate);
 
             label.textContent = new Intl.DateTimeFormat('en', {
@@ -214,23 +282,25 @@
                 return;
             }
 
-            const locationText = displayItem.location || 'Location details coming soon.';
-            const encodedLocation = encodeURIComponent(locationText);
-            const navigationHref = `geo:0,0?q=${encodedLocation}`;
-            const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
+            details.innerHTML = events.map(event => {
+                const locationText = event.location || 'Location details coming soon.';
+                const encodedLocation = encodeURIComponent(locationText);
+                const navigationHref = `geo:0,0?q=${encodedLocation}`;
+                const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
 
-            details.innerHTML = `
-                <p class="event-title">${displayItem.title}</p>
-                <p class="event-description">${displayItem.description}</p>
-                <p class="event-time">Time: ${displayItem.time || 'Time to be announced'}</p>
-                <p class="event-location">Location: <a href="${navigationHref}" target="_blank" rel="noopener noreferrer" onclick="window.location.href='${navigationHref}'; setTimeout(() => window.open('${mapsHref}', '_blank', 'noopener,noreferrer'), 500); return false;">${locationText}</a></p>
-                ${displayItem.ticketUrl ? `<p class="event-ticket-link"><a href="${displayItem.ticketUrl}" target="_blank" rel="noopener noreferrer">Visit event website</a></p>` : ''}
-                <p class="event-date">Date: ${new Intl.DateTimeFormat('en', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric'
-                }).format(selectedDate)}</p>
-            `;
+                return `
+                    <p class="event-title">${event.title}</p>
+                    <p class="event-description">${event.description}</p>
+                    <p class="event-time">Time: ${event.time || 'Time to be announced'}</p>
+                    <p class="event-location">Location: <a href="${navigationHref}" target="_blank" rel="noopener noreferrer" onclick="window.location.href='${navigationHref}'; setTimeout(() => window.open('${mapsHref}', '_blank', 'noopener,noreferrer'), 500); return false;">${locationText}</a></p>
+                    ${event.ticketUrl ? `<p class="event-ticket-link"><a href="${event.ticketUrl}" target="_blank" rel="noopener noreferrer">Visit event website</a></p>` : ''}
+                    <p class="event-date">Date: ${new Intl.DateTimeFormat('en', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    }).format(selectedDate)}</p>
+                `;
+            }).join('');
         }
 
         function renderCalendar() {
@@ -266,10 +336,11 @@
                 }
 
                 const displayItem = getDisplayItemForDate(date);
+                const dayEvents = eventsByDate[formatDateKey(date)] || [];
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.className = 'day-cell' + (isCurrentMonth ? '' : ' muted') + (isSameDate(date, today) ? ' today' : '') + (isSameDate(date, selectedDate) ? ' selected' : '') + (displayItem.isEvent ? ' has-events' : '');
-                button.innerHTML = `<span class="day-number">${dayNumber}</span>${displayItem.isEvent ? `<span class="day-event-label">${displayItem.title}</span>` : ''}${displayItem.isClosed ? `<span class="day-event-label">Closed</span>` : ''}${isRegularOperatingDay(date) && !displayItem.isEvent && !displayItem.isClosed ? `<span class="day-event-label">Open</span>` : ''}`;
+                button.innerHTML = `<span class="day-number">${dayNumber}</span>${dayEvents.map(event => `<span class="day-event-label">${event.title}</span>`).join('')}${displayItem.isClosed ? `<span class="day-event-label">Closed</span>` : ''}`;
                 button.addEventListener('click', () => {
                     selectedDate = date;
                     renderCalendar();
